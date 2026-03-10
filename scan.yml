@@ -1,0 +1,14 @@
+---
+- name: CTI Automation Scan
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+
+    - name: Run CTI Script
+      shell: bash scan.sh
+      register: output
+
+    - name: Show Output
+      debug:
+        var: output.stdout
